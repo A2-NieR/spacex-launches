@@ -503,6 +503,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bootstrap@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "bootstrap@npm:5.1.0"
+  peerDependencies:
+    "@popperjs/core": ^2.9.3
+  checksum: 1e556b71c47b55f6411f789e6d43986f6a3646875f1bef47ee8b1bc16e5d395e75b275d207d6bda7d9752d0573eb4ee5faecb03ebea17dca6259ac8dd68a6aea
+  languageName: node
+  linkType: hard
+
 "brace-expansion@npm:^1.1.7":
   version: 1.1.11
   resolution: "brace-expansion@npm:1.1.11"
@@ -2201,6 +2210,7 @@ resolve@^1.20.0:
     "@vitejs/plugin-vue": ^1.6.0
     "@vue/apollo-composable": ^4.0.0-alpha.14
     "@vue/compiler-sfc": ^3.0.5
+    bootstrap: ^5.1.0
     eslint: ^7.32.0
     eslint-config-prettier: ^8.3.0
     eslint-plugin-vue: ^7.17.0

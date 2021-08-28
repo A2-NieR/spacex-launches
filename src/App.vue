@@ -1,9 +1,17 @@
 <template>
-  <div class="apollo">
-    <h1>SpaceX Launches</h1>
-    <div v-if="loading">Loading...</div>
-    <div v-else-if="error">Error: {{ error.message }}</div>
-    <div v-else>{{ result.launchesPast[0] }}</div>
+  <div class="apollo container-lg">
+    <h1 class="text-center m-5">SpaceX Launches</h1>
+    <div v-if="loading" class="text-center display-6 text-muted">
+      Loading...
+    </div>
+    <div v-else-if="error" class="text-center text-danger">
+      Error: {{ error.message }}
+    </div>
+    <div v-else class="row row-cols-1 row-cols-md-3 g-3">
+      <div v-for="launch in result.launchesPast" :key="launch.id" class="col">
+        <LaunchCard :launch="launch" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -11,10 +19,14 @@
 import { useQuery } from '@vue/apollo-composable';
 import { PAST_LAUNCHES } from './graphql/queries';
 import { watch } from 'vue-demi';
+import LaunchCard from './components/LaunchCard.vue';
 
 export default {
+  components: {
+    LaunchCard
+  },
   setup() {
-    const { result, loading, error } = useQuery(PAST_LAUNCHES, { limit: 20 });
+    const { result, loading, error } = useQuery(PAST_LAUNCHES, { limit: 21 });
 
     watch(result, (value) => console.log(value));
     return { result, loading, error };
@@ -22,13 +34,4 @@ export default {
 };
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>

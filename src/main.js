@@ -6,6 +6,7 @@ import {
 } from '@apollo/client/core';
 import { DefaultApolloClient } from '@vue/apollo-composable';
 import App from './App.vue';
+import './assets/css/bootstrap.min.css';
 
 const httpLink = createHttpLink({
   uri: 'https://api.spacex.land/graphql/'
