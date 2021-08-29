@@ -37,7 +37,7 @@
           <h5 class="card-title">{{ launch.mission_name }}</h5>
           <div class="card-text">Rocket: {{ launch.rocket.rocket_name }}</div>
           <div class="card-text text-muted">
-            Launch Date: {{ launch.launch_date_utc }}
+            Launch Date: {{ convertDate(launch.launch_date_utc) }}
           </div>
         </div>
       </div>
@@ -51,6 +51,12 @@ export default {
     launch: {
       type: Object,
       default: null
+    }
+  },
+  methods: {
+    convertDate(dateString) {
+      const dt = new Date(dateString);
+      return dt.toLocaleString();
     }
   }
 };
