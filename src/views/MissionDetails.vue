@@ -21,7 +21,7 @@
         Launch site: {{ result.launch.launch_site.site_name_long }}
       </h6>
       <h6 class="text-muted m-2">
-        Launch date: {{ result.launch.launch_date_utc }}
+        Launch date: {{ convertDate(result.launch.launch_date_utc) }}
       </h6>
     </div>
 
@@ -34,13 +34,15 @@
       <div
         v-for="image in result.launch.links.flickr_images"
         :key="image"
-        class="row g-md-3 g-2"
+        class="d-flex justify-content-center align-items-center g-md-3 g-2"
       >
-        <img
-          :src="image"
-          alt="flickr image"
-          style="height: 25vw; object-fit: contain"
-        />
+        <a :href="image" target="_blank">
+          <img
+            :src="image"
+            alt="flickr image"
+            style="width: 30vh; object-fit: contain"
+          />
+        </a>
       </div>
     </div>
     <div class="d-flex justify-content-center m-3 mt-5">
@@ -87,6 +89,10 @@ export default {
   methods: {
     toMissions() {
       this.$router.go(-1);
+    },
+    convertDate(dateString) {
+      const dt = new Date(dateString);
+      return dt.toLocaleString();
     }
   }
 };
