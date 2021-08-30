@@ -24,9 +24,17 @@ export const LAUNCH_DETAILS = gql`
       id
       mission_name
       details
+      launch_date_utc
+      rocket {
+        rocket_name
+      }
+      launch_site {
+        site_name_long
+      }
       links {
         flickr_images
         mission_patch
+        wikipedia
       }
     }
   }

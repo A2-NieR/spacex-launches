@@ -1,5 +1,5 @@
 <template>
-  <div class="card h-100 border-0 shadow">
+  <div class="card h-100 border-0 shadow" @click="toDetails">
     <div>
       <img
         v-if="launch.links.flickr_images.length"
@@ -57,6 +57,12 @@ export default {
     convertDate(dateString) {
       const dt = new Date(dateString);
       return dt.toLocaleString();
+    },
+    toDetails() {
+      this.$router.push({
+        name: 'MissionDetails',
+        params: { id: this.launch.id }
+      });
     }
   }
 };
