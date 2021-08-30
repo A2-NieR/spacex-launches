@@ -14,7 +14,7 @@
         v-else
         :src="result.launch.links.flickr_images[0]"
         alt="mission photo"
-        class="h-25 m-3"
+        class="h-25 w-25 m-3"
       />
       <h6 class="m-2 mt-4">Rocket: {{ result.launch.rocket.rocket_name }}</h6>
       <h6 class="m-2">
@@ -34,7 +34,7 @@
       <div
         v-for="image in result.launch.links.flickr_images"
         :key="image"
-        class="row"
+        class="row g-md-3 g-2"
       >
         <img
           :src="image"
