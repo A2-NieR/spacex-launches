@@ -3,6 +3,7 @@
     <div>
       <img
         v-if="launch.links.flickr_images.length"
+        :id="launch.links.flickr_images[0]"
         :src="launch.links.flickr_images[0]"
         alt="mission image"
         class="card-img-top"
@@ -10,6 +11,7 @@
       />
       <img
         v-else
+        :id="launch.links.mission_patch"
         :src="launch.links.mission_patch"
         alt="mission patch"
         class="card-img-top"
@@ -22,12 +24,14 @@
         <div class="col-lg-3 d-xl-block d-none">
           <img
             v-if="launch.links.mission_patch_small"
+            :id="launch.links.mission_patch_small"
             :src="launch.links.mission_patch_small"
             alt="mission patch small"
             style="width: 7.5vh; height: 7.5vh; object-fit: contain"
           />
           <img
             v-else
+            :id="launch.links.flickr_images[0]"
             :src="launch.links.flickr_images[0]"
             alt="launch image"
             style="width: 7.5vh; height: 7.5vh; object-fit: cover"
