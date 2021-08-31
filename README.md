@@ -1,9 +1,13 @@
 # SpaceX Launches
 
-<a href="https://space-x-missions.netlify.app/">
+<br/>
+
+<div align="center">
+  <a href="https://space-x-missions.netlify.app/">
   
-![Website](https://img.shields.io/website?url=https%3A%2F%2Fspace-x-missions.netlify.app%2F)
- </a> ![Netlify](https://img.shields.io/netlify/a37f860f-7d1a-48e3-bbdc-a19c00e3aff8)
+  ![Website](https://img.shields.io/website?url=https%3A%2F%2Fspace-x-missions.netlify.app%2F)
+  </a> ![Netlify](https://img.shields.io/netlify/a37f860f-7d1a-48e3-bbdc-a19c00e3aff8)
+</div>
 
 A frontend written in Vue using the public SpaceX GraphQL API to display past missions.
 
